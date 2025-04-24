@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 function useCurrencyInfo(currency){
     const[data,setData] = useState({})
     useEffect(()=>{
-        fetch(`https://api.currencyapi.com/v3/latest?apikey=cur_live_QKcDO7XIG9CYnAYHKj6i9B3zMb1sbxalb063G3uR`)
+        fetch(` https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json`)
         .then((res) => res.json())
-        .then((res) => setData(res.data))
+        .then((res) => setData(res[currency]))
         // console.log(data);
     },[currency]);
     console.log(data);
